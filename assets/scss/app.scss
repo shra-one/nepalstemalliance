@@ -101,6 +101,9 @@ $primaryDarker: $primary;
   --bgHover: #{$primaryDarker};
   border-radius: 100px;
   font-weight: normal;
+
+  padding:12px 20px;
+  font-weight: bold;
   &-primary {
     background-color: var(--bg);
     border-color: var(--bg);
@@ -491,18 +494,20 @@ $primaryDarker: $primary;
 
 .section--about {
   position: relative;
+ 
   background: linear-gradient(white, white, rgba(#1d648b, 0.1));
   .blobsvg {
     position: absolute;
     top:0;
     
     right:0;
-    height:100%;
+  width:20%;
+  height: auto;
     width:auto;
     z-index: -1;
     opacity: 0.02;
     @media (min-width:768px){
-      opacity: 0.2;
+      opacity: 0.05;
     }
   }
 }
@@ -539,12 +544,17 @@ $primaryDarker: $primary;
 
   .card--stacked {
     padding:60px;
-    background-color: var(--blue);
+    transform:translateY(0);
+    transition:all 0.3s;
+    background: linear-gradient(180deg, #2786BA 0%, #1D648B 100%), #1D648B;
     border-radius: 50px;
     box-shadow: 0px 26px 0px -15px #A5D5EE, 
     0px 30px 0px -16px #96C6E0, 
     0px 52px 0px -30px #CFEEFF, 
     0px 53px 0px -29px #A5D5EE;
+    &:hover {
+      transform: translateY(-15px);
+    }
 
     *:not(.btn){
       color:white;

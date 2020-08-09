@@ -430,7 +430,7 @@ $primaryDarker: $primary;
   }
 
   &-title {
-    text-align: center;
+ 
     color: var(--primary);
     margin-bottom: 0;
     font-weight: 600;
@@ -449,11 +449,13 @@ $primaryDarker: $primary;
   --color: var(--gray-dark);
   border-radius: var(--radiius);
   // border-radius: 16px;
+&--has-shadow {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   &:hover {
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3) !important;
   }
+}
   &-body {
     padding: 32px;
   }
@@ -466,18 +468,9 @@ $primaryDarker: $primary;
   .card-title {
     font-weight: bold;
     position: relative;
-    margin-bottom: 24px;
+ 
     color: var(--color);
-    &:after {
-      content: "";
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 0;
-      width: 20%;
-      height: 2px;
-      transition: all 0.3s;
-      background-color: var(--primary);
-    }
+    
   }
 
   .card-text {
@@ -493,412 +486,71 @@ $primaryDarker: $primary;
 }
 
 /*=============================================
-=            Webinaar countdown            =
+=        about section           =
 =============================================*/
 
-.section--primary {
-  background-color: var(--primary);
-  padding: 40px 0;
-
-  .section-title {
-    text-transform: uppercase;
-    font-size: 24px;
-    color: white;
-    @media (min-width: 600px) {
-      font-size: 28px;
-    }
-  }
-
-  .countDown * {
-    color: white;
-  }
-
-  .countDown-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    // margin:0 -30px;
-
-    > * {
-      margin: 0 30px;
-    }
-
-    .btn {
-      align-self: center;
+.section--about {
+  position: relative;
+  background: linear-gradient(white, white, rgba(#1d648b, 0.1));
+  .blobsvg {
+    position: absolute;
+    top:0;
+    
+    right:0;
+    height:100%;
+    width:auto;
+    z-index: -1;
+    opacity: 0.02;
+    @media (min-width:768px){
+      opacity: 0.2;
     }
   }
 }
-
-/*=============================================
-=            avatar            =
-=============================================*/
-
-.avatar {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding-bottom: 1rem;
-
-  &-image {
-    border: 4px solid #ffffff;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    overflow: hidden;
-    width: var(--offset);
-    height: var(--offset);
-  }
-  &-meta {
-    margin-top: 16px;
-  }
-  &-title {
-    font-weight: 600;
-  }
-}
-
-/*=============================================
-=            testimonials            =
-=============================================*/
-
-.card--testimonials {
-  --offset: 100px;
-  margin-top: 50px;
-
-  @media (min-width: 600px) {
-    margin-top: var(--offset);
-  }
-  .avatar {
-    margin-top: calc((var(--offset) * -1) + 20px);
+ 
+ 
+  
+  /*=============================================
+  =            stacked card            =
+  =============================================*/
+  
+  
+  .stacked-card-wrapper {
     position: relative;
-    &:after {
-      content: "";
+    padding: 40px 0;
+    @media(min-width:992px){
+      padding: 80px 0;
+    }
+    >svg {
       position: absolute;
-      top: 100%;
-      width: 50px;
-      height: 2px;
-      background-color: var(--gray);
+      top:0;
+      left:0;
+      right:0;
+    }
+
+    .card-img {
+      border-radius:20px;
+    }
+
+    .card--stacked {
+      max-width:800px;
+      margin:0 auto;
     }
   }
 
-  blockquote {
-    max-height: 300px;
-    overflow-y: auto;
-  }
-}
+  .card--stacked {
+    padding:60px;
+    background-color: var(--blue);
+    border-radius: 50px;
+    box-shadow: 0px 26px 0px -15px #A5D5EE, 
+    0px 30px 0px -16px #96C6E0, 
+    0px 52px 0px -30px #CFEEFF, 
+    0px 53px 0px -29px #A5D5EE;
 
-/*=============================================
-=            article            =
-=============================================*/
-
-.article {
-  &-title {
-    --theme: var(--gray-darkest);
-    position: relative;
-    margin-bottom: 2rem;
-    font-size: 30px;
-    color: var(--theme);
-    font-weight: 600;
-    // line-height: 1.25;
-    @media (min-width: 768.1px) {
-      max-width: 70%;
-    }
-
-    &:after {
-      content: "";
-      position: absolute;
-      top: calc(100% + 8px);
-      left: 0;
-      width: 20%;
-      height: 2px;
-      transition: all 0.3s;
-      background-color: var(--primary);
+    *:not(.btn){
+      color:white;
     }
   }
-  p:last-child {
-    margin-bottom: 0;
-  }
-
-  &--highlighted {
-    --offset: 150px;
-    --space: 32px;
-    margin-top: var(--offset);
-    padding: var(--space);
-    background-color: var(--cardBG);
-    border-radius: var(--radiius);
-    @at-root .section--author & {
-      --offset: 0;
-    }
-
-    img {
-      margin-bottom: 2rem;
-      border-radius: var(--radiius);
-      margin-top: calc((var(--offset) * -1) - var(--space));
-    }
-  }
-}
-
-/*=============================================
-=            carousel            =
-=============================================*/
-
-.slick-carousel {
-  &-item {
-    padding: 10px;
-    outline: none;
-    @media (min-width: 993px) {
-      transform: scale(1);
-      padding: 20px;
-    }
-    transition: all 0.3s;
-    .card {
-      background-color: #f4f4f4;
-    }
-    &.slick-center {
-      @media (min-width: 993px) {
-        transform: scale(1.2);
-      }
-      z-index: 100;
-      position: relative;
-      .card {
-        background-color: #fff;
-      }
-    }
-  }
-  .slick-track {
-    @media (min-width: 993px) {
-      padding-bottom: 50px;
-    }
-  }
-  .slick-list {
-    padding-bottom: 50px;
-    @media (max-width: 992px) {
-      padding: 20px;
-    }
-    @media (max-width: 768) {
-      padding: 0;
-    }
-  }
-}
-
-.slick-dots {
-  margin: 0 auto;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-
-  li {
-    button {
-      all: unset;
-      margin: 5px;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      border: 2px solid white;
-      text-indent: -9999px;
-    }
-    &.slick-active {
-      button {
-        background-color: white;
-      }
-    }
-  }
-}
-
-.slick-arrow {
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-  transform: translateY(-50%);
-  color: white;
-  background-color: var(--primary);
-  line-height: 1;
-  border-radius: var(--radiius);
-  cursor: pointer;
-
-  &.slick-prev {
-    left: -16px;
-  }
-  &.slick-next {
-    left: auto;
-    right: -16px;
-  }
-
-  .material-icons {
-    font-size: 48px;
-    line-height: 1;
-  }
-}
-
-/*=============================================
-=            author section            =
-=============================================*/
-
-.section--author {
-  background: var(--cardBG);
-
-  &.section--has-offSet-image {
-    // @media (min-width: 992px) {
-    //   &:before,
-    //   &:after {
-    //     background: white;
-    //     content: " ";
-    //     position: absolute;
-    //     height: 100px;
-
-    //     width: 100%;
-    //   }
-    //   &:before {
-    //     top: 0;
-    //   }
-    //   &:after {
-    //     bottom: 0;
-    //   }
-    // }
-    @media (min-width: 992px) {
-      --offset-size: 100px;
-      position: static;
-      margin-top: calc(var(--offset-size));
-      margin-bottom: calc(var(--offset-size));
-
-      .offset-image {
-        margin-top: calc(var(--offset-size) * -1);
-        margin-bottom: calc(var(--offset-size) * -1);
-        position: relative;
-        z-index: 10;
-      }
-    }
-  }
-  img {
-    position: relative;
-    z-index: 1;
-    margin-top: 0;
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.3) !important;
-    &:hover {
-      margin-top: 0 !important;
-    }
-  }
-}
-
-/*=============================================
-=            cta block            =
-=============================================*/
-.card--cta {
-  max-width: 900px;
-  margin: 0 auto;
-
-  .card-header {
-    background: transparent;
-    padding: 0;
-    margin-bottom: 16px;
-    padding-bottom: 16px;
-    // border:none;
-    text-align: center;
-  }
-
-  .card-title {
-    margin-bottom: 16px;
-    &:after {
-      left: 0;
-      right: 0;
-      margin: 0 auto;
-      display: none;
-    }
-  }
-  .card-footer {
-    background: transparent;
-    padding: 0;
-    padding-top: 16px;
-    margin-top: 16px;
-    display: flex;
-  }
-}
-/*=============================================
-=            
-Count down component            =
-=============================================*/
-
-.countDown {
-  --space: 24px;
-  display: flex;
-  margin: 0 calc(var(--space) * -1);
-  @media (min-width: 768px) {
-  }
-
-  &__block {
-    padding: var(--space);
-    text-align: center;
-  }
-  &__time {
-    // border: 1px solid #ccc;
-    // border-radius: 4px;
-    // width: 3.125rem;
-    // height: 3.125rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 28px;
-    color: var(--primary);
-  }
-  label {
-    font-weight: 500;
-    font-size: 0.75rem;
-    margin-bottom: 0;
-    color: var(--primary);
-  }
-}
-
-/*=============================================
-=            social members            =
-=============================================*/
-
-.section--social-platform {
-  padding: 20px 0;
-  background-color: #f0f0f0;
-
-  .section-title {
-    font-weight: 300;
-    font-size: 28px;
-    line-height: normal;
-    color: var(--gray-dark);
-    margin-bottom: 20px;
-  }
-}
-
-.grid-block {
-  overflow: hidden;
-  display: grid;
-  grid-row-gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  &-item {
-    box-shadow: 1px 0 0 #979797;
-    padding: 12px 24px;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-
-    img {
-      --size: 40px;
-      width: var(--size);
-      height: var(--size);
-      margin-right: 24px;
-    }
-  }
-}
-
-.social-platform {
-  padding: 8px;
-}
+  
 
 /*=============================================
 =            footer            =

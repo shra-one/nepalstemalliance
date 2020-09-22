@@ -1,0 +1,52 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "breadcrumbs.enabled": true,
+    "terminal.integrated.shellArgs.windows": null,
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "liveSassCompile.settings.formats": [{
+        "format": "expanded",
+        "extensionName": ".css",
+        "savePath": "./assets/css/"
+    },
+    {
+        "format": "compressed",
+        "extensionName": ".min.css",
+        "savePath": "./assets/css/"
+    }
+],
+"sync.gist": "fc32ca393f55428f267182023dd1de4e",
+"sync.autoDownload": true,
+"sync.autoUpload": true,
+"files.associations": {
+    ".nunjucks": "html",
+    ".njk": "html"
+},
+"html.format.contentUnformatted": "",
+"emmet.includeLanguages": {
+    "nunjucks": "html",
+    "javascript": "javascriptreact",
+},
+"explorer.confirmDelete": false,
+"window.zoomLevel": 0,
+"emmet.extensionsPath": "",
+"javascript.updateImportsOnFileMove.enabled": "always",
+"[scss]": {
+    "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
+},
+"[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"liveSassCompile.settings.autoprefix": [],
+"[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+},
+"liveSassCompile.settings.excludeList": [
+
+    "**/node_modules/**",
+    ".vscode/**"
+]
+}

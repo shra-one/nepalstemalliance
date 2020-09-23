@@ -34,16 +34,9 @@
 "[scss]": {
     "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter"
 },
-"[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
-"[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
+ 
 "liveSassCompile.settings.autoprefix": [],
-"[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-},
+ 
 "liveSassCompile.settings.excludeList": [
 
     "**/node_modules/**",

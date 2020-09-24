@@ -9,10 +9,18 @@ $(function(){
         targetDiv.attr('src', currentSrc);
     })
 
+    // product slider
+    $('.product-slider').slick({
+        // infinite: true,
+        // variableWidth: true,
+        slidesToScroll: 1,
+        dots: true,
+    }
+      );
     //zoom 
  
         $(document).ready(function() {
-        $('.xzoom, .xzoom-gallery').xzoom({zoomWidth: 400, title: true, tint: '#333', Xoffset: 15});
+        $('.xzoom, .xzoom-gallery').xzoom({zoomWidth: 400, title: true, tint: '#ccc', Xoffset: 15});
         $('.xzoom2, .xzoom-gallery2').xzoom({position: '#xzoom2-id', tint: '#ffa200'});
         $('.xzoom3, .xzoom-gallery3').xzoom({position: 'lens', lensShape: 'circle', sourceClass: 'xzoom-hidden'});
         $('.xzoom4, .xzoom-gallery4').xzoom({tint: '#006699', Xoffset: 15});
